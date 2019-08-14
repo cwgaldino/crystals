@@ -17,7 +17,7 @@ AUTHOR_EMAIL = "laurent.renedecotret@mail.mcgill.ca"
 CIF_FILES = chain.from_iterable([glob("crystals\\cifs\\*.cif")])
 
 base_path = Path(__file__).parent
-with open(base_path / PACKAGE_NAME / "__init__.py") as f:
+with open(str(base_path / PACKAGE_NAME / "__init__.py")) as f:
     module_content = f.read()
     VERSION = (
         re.compile(r".*__version__ = \"(.*?)\"", re.S).match(module_content).group(1)
